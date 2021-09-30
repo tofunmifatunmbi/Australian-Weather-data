@@ -1,0 +1,325 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Project 1},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Project 1}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\#\#\#\#\#\# Question 1\#\#\#\#\#\#\#\#\#\#\#\#}
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"\textasciitilde{}/5310 Project 1"}\NormalTok{)}
+\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"weather{-}2021.csv"}\NormalTok{, }\AttributeTok{check.names =}\NormalTok{ F)}
+\FunctionTok{dim}\NormalTok{(dat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 255  22
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(dat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            Date Minimum temperature (°C) Maximum temperature (°C) Rainfall (mm)
+## 1 JAN 2021-01-1                     14.4                     19.7           0.0
+## 2 JAN 2021-01-2                     13.0                     22.3           0.0
+## 3 JAN 2021-01-3                     15.7                     26.7           5.8
+## 4 JAN 2021-01-4                     14.6                     24.8           7.2
+## 5 JAN 2021-01-5                     14.1                     28.0           5.4
+## 6 JAN 2021-01-6                     13.0                     24.7           0.2
+##   Evaporation (mm) Sunshine (hours) Direction of maximum wind gust 
+## 1               NA               NA                             ESE
+## 2               NA               NA                               E
+## 3               NA               NA                             NNW
+## 4               NA               NA                             WNW
+## 5               NA               NA                              NW
+## 6               NA               NA                             ESE
+##   Speed of maximum wind gust (km/h) Time of maximum wind gust
+## 1                                35                     12:39
+## 2                                37                     16:02
+## 3                                31                     13:28
+## 4                                56                     13:28
+## 5                                39                     13:16
+## 6                                46                     13:23
+##   9am Temperature (°C) 9am relative humidity (%) 9am cloud amount (oktas)
+## 1                 15.9                        71                        8
+## 2                 16.9                        59                        8
+## 3                 17.9                        94                        8
+## 4                 21.6                        74                        7
+## 5                 19.2                        77                        4
+## 6                 18.2                        68                        8
+##   9am wind direction 9am wind speed (km/h) 9am MSL pressure (hPa)
+## 1                 SE                    17                 1021.7
+## 2                  E                     7                 1015.7
+## 3               <NA>                  Calm                 1008.1
+## 4                  W                     6                 1006.3
+## 5                  W                     9                 1008.0
+## 6                 SE                    11                 1014.0
+##   3pm Temperature (°C) 3pm relative humidity (%) 3pm cloud amount (oktas)
+## 1                 18.5                        59                        8
+## 2                 20.6                        60                        8
+## 3                 24.1                        60                        8
+## 4                 16.3                        97                        8
+## 5                 26.6                        41                        2
+## 6                 19.1                        76                        7
+##   3pm wind direction 3pm wind speed (km/h) 3pm MSL pressure (hPa)
+## 1                ESE                    17                 1019.1
+## 2                  E                    17                 1011.7
+## 3                 NW                    17                 1005.8
+## 4                SSW                    13                 1007.6
+## 5                 NW                    20                 1006.2
+## 6                ESE                    33                 1013.4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(dat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    255 obs. of  22 variables:
+##  $                                  : chr  "JAN" "JAN" "JAN" "JAN" ...
+##  $ Date                             : chr  "2021-01-1" "2021-01-2" "2021-01-3" "2021-01-4" ...
+##  $ Minimum temperature (°C)         : num  14.4 13 15.7 14.6 14.1 13 8.3 8.2 7.1 10.7 ...
+##  $ Maximum temperature (°C)         : num  19.7 22.3 26.7 24.8 28 24.7 24.3 22.2 27.7 31.8 ...
+##  $ Rainfall (mm)                    : num  0 0 5.8 7.2 5.4 0.2 0 0 0 0 ...
+##  $ Evaporation (mm)                 : logi  NA NA NA NA NA NA ...
+##  $ Sunshine (hours)                 : logi  NA NA NA NA NA NA ...
+##  $ Direction of maximum wind gust   : chr  "ESE" "E" "NNW" "WNW" ...
+##  $ Speed of maximum wind gust (km/h): int  35 37 31 56 39 46 44 39 31 37 ...
+##  $ Time of maximum wind gust        : chr  "12:39" "16:02" "13:28" "13:28" ...
+##  $ 9am Temperature (°C)             : num  15.9 16.9 17.9 21.6 19.2 18.2 16.6 15.5 17.3 19.9 ...
+##  $ 9am relative humidity (%)        : int  71 59 94 74 77 68 57 61 61 60 ...
+##  $ 9am cloud amount (oktas)         : int  8 8 8 7 4 8 NA 8 NA NA ...
+##  $ 9am wind direction               : chr  "SE" "E" NA "W" ...
+##  $ 9am wind speed (km/h)            : chr  "17" "7" "Calm" "6" ...
+##  $ 9am MSL pressure (hPa)           : num  1022 1016 1008 1006 1008 ...
+##  $ 3pm Temperature (°C)             : num  18.5 20.6 24.1 16.3 26.6 19.1 22.3 20.8 26.1 29 ...
+##  $ 3pm relative humidity (%)        : int  59 60 60 97 41 76 37 42 35 32 ...
+##  $ 3pm cloud amount (oktas)         : int  8 8 8 8 2 7 3 7 1 8 ...
+##  $ 3pm wind direction               : chr  "ESE" "E" "NW" "SSW" ...
+##  $ 3pm wind speed (km/h)            : chr  "17" "17" "17" "13" ...
+##  $ 3pm MSL pressure (hPa)           : num  1019 1012 1006 1008 1006 ...
+\end{verbatim}
+
+Comment for Q1
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Question 2a}
+\NormalTok{dat}\OtherTok{=}\NormalTok{dat[,}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{)]}
+\FunctionTok{str}\NormalTok{(dat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    255 obs. of  21 variables:
+##  $                                  : chr  "JAN" "JAN" "JAN" "JAN" ...
+##  $ Date                             : chr  "2021-01-1" "2021-01-2" "2021-01-3" "2021-01-4" ...
+##  $ Minimum temperature (°C)         : num  14.4 13 15.7 14.6 14.1 13 8.3 8.2 7.1 10.7 ...
+##  $ Maximum temperature (°C)         : num  19.7 22.3 26.7 24.8 28 24.7 24.3 22.2 27.7 31.8 ...
+##  $ Rainfall (mm)                    : num  0 0 5.8 7.2 5.4 0.2 0 0 0 0 ...
+##  $ Evaporation (mm)                 : logi  NA NA NA NA NA NA ...
+##  $ Sunshine (hours)                 : logi  NA NA NA NA NA NA ...
+##  $ Direction of maximum wind gust   : chr  "ESE" "E" "NNW" "WNW" ...
+##  $ Speed of maximum wind gust (km/h): int  35 37 31 56 39 46 44 39 31 37 ...
+##  $ 9am Temperature (°C)             : num  15.9 16.9 17.9 21.6 19.2 18.2 16.6 15.5 17.3 19.9 ...
+##  $ 9am relative humidity (%)        : int  71 59 94 74 77 68 57 61 61 60 ...
+##  $ 9am cloud amount (oktas)         : int  8 8 8 7 4 8 NA 8 NA NA ...
+##  $ 9am wind direction               : chr  "SE" "E" NA "W" ...
+##  $ 9am wind speed (km/h)            : chr  "17" "7" "Calm" "6" ...
+##  $ 9am MSL pressure (hPa)           : num  1022 1016 1008 1006 1008 ...
+##  $ 3pm Temperature (°C)             : num  18.5 20.6 24.1 16.3 26.6 19.1 22.3 20.8 26.1 29 ...
+##  $ 3pm relative humidity (%)        : int  59 60 60 97 41 76 37 42 35 32 ...
+##  $ 3pm cloud amount (oktas)         : int  8 8 8 8 2 7 3 7 1 8 ...
+##  $ 3pm wind direction               : chr  "ESE" "E" "NW" "SSW" ...
+##  $ 3pm wind speed (km/h)            : chr  "17" "17" "17" "13" ...
+##  $ 3pm MSL pressure (hPa)           : num  1019 1012 1006 1008 1006 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(dat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            Date Minimum temperature (°C) Maximum temperature (°C) Rainfall (mm)
+## 1 JAN 2021-01-1                     14.4                     19.7           0.0
+## 2 JAN 2021-01-2                     13.0                     22.3           0.0
+## 3 JAN 2021-01-3                     15.7                     26.7           5.8
+## 4 JAN 2021-01-4                     14.6                     24.8           7.2
+## 5 JAN 2021-01-5                     14.1                     28.0           5.4
+## 6 JAN 2021-01-6                     13.0                     24.7           0.2
+##   Evaporation (mm) Sunshine (hours) Direction of maximum wind gust 
+## 1               NA               NA                             ESE
+## 2               NA               NA                               E
+## 3               NA               NA                             NNW
+## 4               NA               NA                             WNW
+## 5               NA               NA                              NW
+## 6               NA               NA                             ESE
+##   Speed of maximum wind gust (km/h) 9am Temperature (°C)
+## 1                                35                 15.9
+## 2                                37                 16.9
+## 3                                31                 17.9
+## 4                                56                 21.6
+## 5                                39                 19.2
+## 6                                46                 18.2
+##   9am relative humidity (%) 9am cloud amount (oktas) 9am wind direction
+## 1                        71                        8                 SE
+## 2                        59                        8                  E
+## 3                        94                        8               <NA>
+## 4                        74                        7                  W
+## 5                        77                        4                  W
+## 6                        68                        8                 SE
+##   9am wind speed (km/h) 9am MSL pressure (hPa) 3pm Temperature (°C)
+## 1                    17                 1021.7                 18.5
+## 2                     7                 1015.7                 20.6
+## 3                  Calm                 1008.1                 24.1
+## 4                     6                 1006.3                 16.3
+## 5                     9                 1008.0                 26.6
+## 6                    11                 1014.0                 19.1
+##   3pm relative humidity (%) 3pm cloud amount (oktas) 3pm wind direction
+## 1                        59                        8                ESE
+## 2                        60                        8                  E
+## 3                        60                        8                 NW
+## 4                        97                        8                SSW
+## 5                        41                        2                 NW
+## 6                        76                        7                ESE
+##   3pm wind speed (km/h) 3pm MSL pressure (hPa)
+## 1                    17                 1019.1
+## 2                    17                 1011.7
+## 3                    17                 1005.8
+## 4                    13                 1007.6
+## 5                    20                 1006.2
+## 6                    33                 1013.4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(dat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 255  21
+\end{verbatim}
+
+Comment Q2
+
+\begin{verbatim}
+\end{verbatim}
+
+Comment Q2
+
+\end{document}
