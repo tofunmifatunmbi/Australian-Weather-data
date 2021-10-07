@@ -1,8 +1,8 @@
-######### Question 1############
+######### Problem 1############
 setwd("~/Documents/APSU COURSE CODE")
 dat= read.csv("weather-2021.csv", check.names = F)
 dim(dat)
-######### Question 2############
+######### Problem 2############
 #2a
 dat=dat[,-c(10)]
 #2b
@@ -50,7 +50,7 @@ data$RainToday = c(ifelse(data$Rainfall >1, 1,0))
 data$RainTomorrow = c(data$RainToday[2:nrow(data)],NA) 
 #2g
 write.csv(data,"newDataSet.csv")
-######### Question 3###########
+######### Problem 3 ###########
 data$RainTomorrow <- ifelse(data$RainTomorrow==0, "No", "Yes")
 tab=table(data$RainTomorrow,useNA="no")
 tab
