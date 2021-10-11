@@ -1,8 +1,9 @@
-######### Problem 1############
+## Data Analysis of 2021 Australian Capital Territory, Canberra Weather data
+######### Problem 1 ############
 setwd("~/Documents/APSU COURSE CODE")
 dat= read.csv("weather-2021.csv", check.names = F)
 dim(dat)
-######### Problem 2############
+######### Problem 2 ############
 #2a
 dat=dat[,-c(10)]
 #2b
@@ -33,11 +34,11 @@ for (j in 1:ncol(data)){
 out <- as.data.frame(out)
 row.names(out) <- NULL
 out
-#2d
+# 2d
 apply(dat,2,FUN=function(x){table(x, useNA = "ifany")})
 data[data$WindSpeed9am == "Calm", ]$WindSpeed9am <- 0
 table(data$WindSpeed9am,useNA="ifany")
-#2e
+# 2e
 # WindSpeed3pm data "Calm" cannot be change to 0 because of the presence
 # of missing values in the dataset
 # error missing values are not allowed in subscripted assignments of data frames
@@ -48,7 +49,7 @@ str(data)
 # 2f
 data$RainToday = c(ifelse(data$Rainfall >1, 1,0))
 data$RainTomorrow = c(data$RainToday[2:nrow(data)],NA) 
-#2g
+# 2g
 write.csv(data,"newDataSet.csv")
 ######### Problem 3 ###########
 data$RainTomorrow <- ifelse(data$RainTomorrow==0, "No", "Yes")
