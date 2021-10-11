@@ -1,9 +1,12 @@
 ## Data Analysis of 2021 Australian Capital Territory, Canberra Weather data
-######### Problem 1 ############
+### Problem 1 
+## Data Scraping
 setwd("~/Documents/APSU COURSE CODE")
 dat= read.csv("weather-2021.csv", check.names = F)
 dim(dat)
-######### Problem 2 ############
+
+### Problem 2 
+## Data Cleaning
 #2a
 dat=dat[,-c(10)]
 #2b
@@ -51,7 +54,9 @@ data$RainToday = c(ifelse(data$Rainfall >1, 1,0))
 data$RainTomorrow = c(data$RainToday[2:nrow(data)],NA) 
 # 2g
 write.csv(data,"newDataSet.csv")
-######### Problem 3 ###########
+
+### Problem 3 
+## Exploratory Data Analysis
 data$RainTomorrow <- ifelse(data$RainTomorrow==0, "No", "Yes")
 tab=table(data$RainTomorrow,useNA="no")
 tab
